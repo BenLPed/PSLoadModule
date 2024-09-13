@@ -16,6 +16,7 @@ function Check-Module {
 
 # Function to ensure a module is installed and loaded
 function Ensure-Module {
+    
     <#
     .SYNOPSIS
     Ensures that a specific module is installed from a given repository.
