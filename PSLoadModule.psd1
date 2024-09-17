@@ -16,7 +16,7 @@ RootModule = 'PSLoadModule.psm1'
     # Minor - new solutions, e.g. new cmdlets
     # Build - new features, e.g. new params
     # Revision - fixed bugs, typos, etc...
-ModuleVersion = '1.0.0.1'
+ModuleVersion = '1.0.0.2'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -101,10 +101,7 @@ PrivateData = @{
         # Tags applied to this module. These help with module discovery in online galleries.
         Tags = @(
             'Module',
-            'Import module',
-            'install module',
-            'import-module',
-            'install-module'
+            'Import-module'
         )
 
         # A URL to the license for this module.
@@ -123,6 +120,9 @@ PrivateData = @{
 
         v1.0.0.1
         - Bux Fix
+
+        v1.0.0.2
+        - Include List of Modules that can not be loaded
         '
 
         # Prerelease string of this module
