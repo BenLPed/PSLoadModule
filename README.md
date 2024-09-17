@@ -6,14 +6,10 @@ This module checks if the desired powershell module is installed. If it is impor
 
 
 ## Table of Contents
-- [PSScriptLogging](#ScriptLogging)
 - [Install module from the PowerShell Gallery](#Install-module-from-the-PowerShell-Gallery)
   - [Import the module](Import-the-module)
   - [Update the module](Update-the-module)
 - [Usage and Examples](#Usage-and-Examples)
-  - [Start-Log](#Start-Log)
-  - [Write-Log](#Write-Log)
-- [Software to view the .log fil](#Software-to-view-the-.log-fil)
 - [Release Notes](#Release-Notes)
 
 # Install module from the PowerShell gallery
