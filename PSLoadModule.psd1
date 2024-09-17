@@ -101,7 +101,8 @@ PrivateData = @{
         # Tags applied to this module. These help with module discovery in online galleries.
         Tags = @(
             'Module',
-            'Import-module'
+            'Import-module',
+            'Install-module'
         )
 
         # A URL to the license for this module.
