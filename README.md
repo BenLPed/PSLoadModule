@@ -53,3 +53,6 @@ v1.0.0.2
 v1.0.0.2
 - Bug fix
 - Include Modules that can not be installed
+
+v1.0.0.3
+- Extend code to check if module is exists or not

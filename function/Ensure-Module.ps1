@@ -105,24 +105,30 @@ function Ensure-Module {
         return
     }
 
-    # Tjek om modulet allerede er installeret
-    if (-not (Get-Module -ListAvailable -Name $ModuleName)) {
+    $Exist = Find-Module -Name $ModuleName -Repository $Repository
+
+    if($Exist) {
+        # Tjek om modulet allerede er installeret
+        if (-not (Get-Module -ListAvailable -Name $ModuleName)) {
+            try {
+                # Forsøg at installere modulet fra PowerShell Gallery
+                Write-Host "Installerer modulet '$ModuleName' fra $Repository" -ForegroundColor Green
+                Install-Module -Name $ModuleName -Force -Scope $Scope -Repository $Repository
+            } catch {
+                Write-Host "Fejl under installation af modulet '$ModuleName': $_" -ForegroundColor Red
+            }
+        } else {
+            Write-Host "Modulet '$ModuleName' er allerede installeret." -ForegroundColor Cyan
+        }
+
+        # Importér modulet, hvis det blev installeret eller allerede var installeret
         try {
-            # Forsøg at installere modulet fra PowerShell Gallery
-            Write-Host "Installerer modulet '$ModuleName' fra $Repository" -ForegroundColor Green
-            Install-Module -Name $ModuleName -Force -Scope $Scope -Repository $Repository
+            Import-Module -Name $ModuleName -ErrorAction Stop
+            Write-Host "Modulet '$ModuleName' er blevet importeret." -ForegroundColor Green
         } catch {
-            Write-Host "Fejl under installation af modulet '$ModuleName': $_" -ForegroundColor Red
+            Write-Host "Fejl under import af modulet '$ModuleName': $_" -ForegroundColor Red
         }
     } else {
-        Write-Host "Modulet '$ModuleName' er allerede installeret." -ForegroundColor Cyan
-    }
-
-    # Importér modulet, hvis det blev installeret eller allerede var installeret
-    try {
-        Import-Module -Name $ModuleName -ErrorAction Stop
-        Write-Host "Modulet '$ModuleName' er blevet importeret." -ForegroundColor Green
-    } catch {
-        Write-Host "Fejl under import af modulet '$ModuleName': $_" -ForegroundColor Red
+        Write-Host "Modulet '$ModuleName' er ikke tilgængelig. $Repository" -ForegroundColor Yellow
     }
 }
