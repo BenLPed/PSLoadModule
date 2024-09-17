@@ -30,10 +30,10 @@ Update-Module -Name PSLoadModule -Force
 # Usage and Examples
 
 ### Ensure-Module
-You started logging by using Start-Log. Here you tall what the script should be called, where it should be located, which company, description of what the script does, number of days the log files should be saved
+Ensure-model checks if the module you specified is on the list of modules that cannot be installed from Powershell Gallery. 
+Then check it as the module is installed and if it is not installed then it is installed and imported. If it is installed then it is just imported. 
 
-It checks if the folder is created, otherwise it is created. It then checks whether the file exists, otherwise it is created.
-It then stores the default information, so that there is no doubt when a new run has started, especially if it runs several times on the same day.
+It is an easy way to check the modules you want to import in various scripts.
 
 ```PowerShell
 Ensure-Module -ModuleName Pester
