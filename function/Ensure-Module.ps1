@@ -39,7 +39,7 @@ function Ensure-Module {
 
     .NOTES
     Author: Benni Ladevig Pedersen
-    Version: 1.0.0.0
+    Version: 1.0.0.2
     #>
 
     param(
