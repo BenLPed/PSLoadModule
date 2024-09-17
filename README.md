@@ -1,6 +1,7 @@
-# ScriptLogging
+# PSLoadModule
 
-This module can help you create logging in your scripts. You write **write-log "what needs to happen or what happens"**. You can follow along live, which makes it easy to see what is happening. It also records which user runs the script, which line of the script is executed and the time. So if something goes wrong, it's easy to find out what went wrong.
+
+This module checks if the desired powershell module is installed. If it is imported otherwise it is installed as default from Powershellgallery. But you can specify if you want to install from elsewhere.
 
 ![Complet view of Logfil](Images//fullPic.png?raw=true)
 
