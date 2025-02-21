@@ -49,7 +49,7 @@ Ensure-Module -ModuleName Pester
 Ensure-Module -ModuleName Pester -Repository MyRepo -Scope AllUsers
 ```
 
-```
+
 Checks if the Pester, Az, and Microsoft.Graph modules are installed. 
 If they are not installed, the function installs them from the default repository (PSGallery) and imports them.
 If they are already installed, then they are simply imported:
