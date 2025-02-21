@@ -7,6 +7,7 @@ This module checks if the desired powershell module is installed. If it is impor
 
 ## Table of Contents
 - [Install module from the PowerShell Gallery](#Install-module-from-the-PowerShell-Gallery)
+  - [Install the module](#Install-the-module)
   - [Import the module](#Import-the-module)
   - [Update the module](#Update-the-module)
 - [Usage and Examples](#Usage-and-Examples)
@@ -16,11 +17,15 @@ This module checks if the desired powershell module is installed. If it is impor
 # Install module from the PowerShell gallery
 Install [PSLoadModule](https://www.powershellgallery.com/packages/PSLoadModule) from PSGallery:
 
-##### Import the module
+##### Install the module
 ```PowerShell
 Install-Module -Name PSLoadModule -Repository PSGallery -Force
 ```
 
+##### Import the module
+```PowerShell
+Import-Module -Name PSLoadModule -Repository PSGallery -Force
+```
 
 ##### Update the module
 ```PowerShell
