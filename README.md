@@ -35,7 +35,7 @@ Then check it as the module is installed and if it is not installed then it is i
 
 It is an easy way to check the modules you want to import in various scripts.
 
-Installs the Pester modules if they are not already installed from PSGallery.
+Installs the Pester modules if they are not already installed from PSGallery:
 ```PowerShell
 Ensure-Module -ModuleName Pester
 ```
@@ -43,9 +43,10 @@ Ensure-Module -ModuleName Pester
 ```PowerShell
 Ensure-Module -ModuleName Pester -Repository MyRepo -Scope AllUsers
 ```
-
-Checks if the Pester, Az, and Microsoft.Graph modules are installed. If they are not installed, the function installs them from the default repository (PSGallery) and imports them. 
-If they are already installed, then they are simply imported.
+`  `
+Checks if the Pester, Az, and Microsoft.Graph modules are installed. 
+If they are not installed, the function installs them from the default repository (PSGallery) and imports them.
+If they are already installed, then they are simply imported:
 ```PowerShell
 Ensure-Module -ModuleNames Pester, Az, Microsoft.Graph
 ```
