@@ -7,8 +7,8 @@ This module checks if the desired powershell module is installed. If it is impor
 
 ## Table of Contents
 - [Install module from the PowerShell Gallery](#Install-module-from-the-PowerShell-Gallery)
-  - [Import the module](Import-the-module)
-  - [Update the module](Update-the-module)
+  - [Import the module](#Import-the-module)
+  - [Update the module](#Update-the-module)
 - [Usage and Examples](#Usage-and-Examples)
 - [Release Notes](#Release-Notes)
 
@@ -35,6 +35,7 @@ Then check it as the module is installed and if it is not installed then it is i
 
 It is an easy way to check the modules you want to import in various scripts.
 
+Installs the Pester modules if they are not already installed from PSGallery.
 ```PowerShell
 Ensure-Module -ModuleName Pester
 ```
@@ -43,7 +44,18 @@ Ensure-Module -ModuleName Pester
 Ensure-Module -ModuleName Pester -Repository MyRepo -Scope AllUsers
 ```
 
+Checks if the Pester, Az, and Microsoft.Graph modules are installed. If they are not installed, the function installs them from the default repository (PSGallery) and imports them. 
+If they are already installed, then they are simply imported.
+```PowerShell
+Ensure-Module -ModuleNames Pester, Az, Microsoft.Graph
+```
 
+Installs the Pester module from 'MyRepo' and makes it available for all users.
+```PowerShell
+Ensure-Module -ModuleNames Pester, Az -Repository MyRepo -Scope AllUsers
+```
+
+## Release Notes
 v1.0.0.0
 - Full Version
 
@@ -56,3 +68,6 @@ v1.0.0.2
 
 v1.0.0.3
 - Extend code to check if module is exists or not
+
+v1.1.0.0
+- Can now load multi module at once

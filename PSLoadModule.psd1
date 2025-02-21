@@ -16,7 +16,7 @@ RootModule = 'PSLoadModule.psm1'
     # Minor - new solutions, e.g. new cmdlets
     # Build - new features, e.g. new params
     # Revision - fixed bugs, typos, etc...
-ModuleVersion = '1.0.0.3'
+ModuleVersion = '1.1.0.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -127,6 +127,9 @@ PrivateData = @{
 
         v1.0.0.3
         - Extend code to check if module is exists or not
+
+        v1.1.0.0
+        - Can now load multi module at once
         '
 
         # Prerelease string of this module
