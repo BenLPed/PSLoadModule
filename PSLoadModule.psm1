@@ -1,8 +1,14 @@
+﻿# PSLoadModule.psm1 — eager loader + alias
+$publicPath = Join-Path -Path $PSScriptRoot -ChildPath 'Public'
+$implPath   = Join-Path -Path $publicPath   -ChildPath 'Install-RequiredModule.ps1'
 
-$PSRoot = Join-Path  $PSScriptRoot function
-
-# Import of all ps1 files
-Get-ChildItem -Path $PSRoot -Filter *.ps1  | ForEach-Object {
-    # Dot-source hver funktion for at indlæse den i den aktuelle session
-    . $_.FullName
+if (-not (Test-Path -LiteralPath $implPath)) {
+    throw "PSLoadModule: Missing file '$implPath'."
 }
+
+. "$implPath"  # definerer function Install-RequiredModule
+
+# Alias: Ensure-Module -> Install-RequiredModule
+Set-Alias -Name 'Ensure-Module' -Value 'Install-RequiredModule' -Scope Script
+
+# Ingen Export-ModuleMember her; manifestet eksporterer
