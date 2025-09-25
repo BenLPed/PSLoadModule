@@ -9,7 +9,7 @@
 Optional badges – 
 [![PSGallery Version](https://img.shields.io/powershellgallery/v/PSLoadModule.svg)](https://www.powershellgallery.com/packages/PSLoadModule)
 [![PSGallery Downloads](https://img.shields.io/powershellgallery/dt/PSLoadModule.svg)](https://www.powershellgallery.com/packages/PSLoadModule)
-[![CI](https://github.com/<YOUR-USER-OR-ORG>/PSLoadModule/actions/workflows/ci.yml/badge.svg)](https://github.com/<YOUR-USER-OR-ORG>/PSLoadModule/actions/workflows/ci.yml)
+[![CI](https://github.com/<YOUR-USER-OR-ORG>/PSLoadModule/actions/workflows/ci.yml/badge.svg)](https://github.com/benlped/PSLoadModule/actions/workflows/ci.yml)
 
 
 ---
