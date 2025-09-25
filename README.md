@@ -184,6 +184,8 @@ try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::
 
 
 ## Release Notes
+**v1.2.0.1**
+ - Documentation error 
 **v1.2.0.0**
   - New primary cmdlet **Install-RequiredModule** (approved verb); `Ensure-Module` kept as alias
   - Minor fixes and robustness improvements (PSResourceGet/v2 detection, -WhatIf/-Confirm, better logging)
