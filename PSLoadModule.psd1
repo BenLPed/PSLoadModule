@@ -16,10 +16,10 @@ RootModule = 'PSLoadModule.psm1'
     # Minor - new solutions, e.g. new cmdlets
     # Build - new features, e.g. new params
     # Revision - fixed bugs, typos, etc...
-ModuleVersion = '1.1.0.0'
+ModuleVersion = '1.2.0.0'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = @('Desktop','Core')
 
 # ID used to uniquely identify this module
 GUID = 'd9588c1b-ba05-4ce4-b26b-59088ff28df2'
@@ -34,7 +34,7 @@ CompanyName = ''
 Copyright = '(c) 2024 Benni Ladevig Pedersen. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'Help loading or install needed PowerShell module'
+Description = 'Ensure required modules are installed (PSGallery or custom repo) and imported. Supports PSResourceGet and PowerShellGet.'
 
 # Minimum version of the PowerShell engine required by this module
 PowerShellVersion = '5.1'
@@ -73,7 +73,7 @@ PowerShellVersion = '5.1'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Ensure-Module'
+FunctionsToExport = 'Install-RequiredModule'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
@@ -82,7 +82,7 @@ CmdletsToExport = @()
 # VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = @()
+AliasesToExport = 'Ensure-Module'
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
@@ -102,7 +102,10 @@ PrivateData = @{
         Tags = @(
             'Module',
             'Import-module',
-            'Install-module'
+            'Install-module',
+            'PSResourceGet',
+            'PowerShellGet',
+            'ModuleManagement'
         )
 
         # A URL to the license for this module.
@@ -115,22 +118,20 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = '
-        v1.0.0.0
-        - Full Version
-
-        v1.0.0.1
-        - Bux Fix
-
-        v1.0.0.2
-        - Include List of Modules that can not be loaded
-
-        v1.0.0.3
-        - Extend code to check if module is exists or not
-
-        v1.1.0.0
-        - Can now load multi module at once
-        '
+        ReleaseNotes = @'
+v1.2.0.0
+- Minor fixes and improvements (advanced function, -WhatIf/-Confirm, PSResourceGet fallback, better logging)
+v1.1.0.0
+- Load multiple modules in one call
+v1.0.0.3
+- Extended existence checks
+v1.0.0.2
+- Added list/handling of non-Gallery modules
+v1.0.0.1
+- Bug Fix
+v1.0.0.0
+- Initial release
+'@
 
         # Prerelease string of this module
         # Prerelease = ''
