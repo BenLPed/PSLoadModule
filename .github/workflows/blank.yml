@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PowerShell
+        uses: actions/setup-powershell@v2
+
+      - name: Install Pester & PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Install-Module Pester -Scope CurrentUser -Force -MinimumVersion 5.5.0
+          Install-Module PSScriptAnalyzer -Scope CurrentUser -Force
+
+      - name: Lint (PSScriptAnalyzer)
+        shell: pwsh
+        run: |
+          Invoke-ScriptAnalyzer -Path . -Recurse -EnableExit
+
+      - name: Run Pester smoke tests
+        shell: pwsh
+        run: |
+          Invoke-Pester -Path .\Tests -CI -EnableExit
